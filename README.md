@@ -2,6 +2,8 @@
 
 A powerful application that converts UI mockup images into production-ready HTML, CSS, and JavaScript code using OpenAI's GPT-4 Vision model. This tool helps developers quickly transform design mockups into functional code.
 
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ## Features
 
 - Upload UI mockup images (PNG, JPG, JPEG)
