@@ -1,6 +1,6 @@
 # UI Code Generator
 
-A powerful application that converts UI mockup images into production-ready HTML, CSS, and JavaScript code using OpenAI's GPT-4 Vision model. This tool helps developers quickly transform design mockups into functional code.
+A powerful application that converts UI mockup images into production-ready HTML, CSS, and JavaScript code using OpenAI's GPT-4o Vision model. This tool helps developers quickly transform design mockups into functional code.
 
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -68,7 +68,7 @@ echo "OPENAI_API_KEY=your_api_key_here" > .env
 
 ## Configuration
 
-1. Ensure your OpenAI API key is valid and has access to the GPT-4 Vision model
+1. Ensure your OpenAI API key is valid and has access to the GPT-4o Vision model
 2. The server runs on port 3001 by default (configurable via PORT environment variable)
 3. The React development server runs on port 3000
 
