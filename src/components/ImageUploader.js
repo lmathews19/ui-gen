@@ -39,7 +39,7 @@ const ImageUploader = ({ onCodeGenerated }) => {
 
       onCodeGenerated(response.data.code);
     } catch (err) {
-      setError("Error generating code. Please try again.");
+      setError("Error generating code. Please try again. And, make sure the API server is running and OPEN_API_KEY has been specified.");
       console.error("Error:", err);
     } finally {
       setLoading(false);

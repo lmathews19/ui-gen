@@ -27,7 +27,7 @@ const upload = multer({ storage: storage });
 
 // Configure OpenAI
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
+  apiKey: process.env.OPENAI_API_KEY || 'Invalid-key. Set your key in .env file'
 });
 
 // Middleware
