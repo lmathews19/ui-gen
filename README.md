@@ -93,6 +93,11 @@ npm start
 4. View the generated code in the tabbed interface
 5. Use the "Preview" button to see the live result
 
+![Screenshot 1](https://github.com/user-attachments/assets/b1b46fcc-53e7-4159-810d-522c0e1431ca)
+
+![Screenshot 2](https://github.com/user-attachments/assets/d7983f97-bd5f-47fd-baa1-83156dbc1d17)
+
+
 ## Error Handling
 
 The application provides clear error messages for:
