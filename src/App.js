@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { Container, Typography, CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import ImageUploader from './components/ImageUploader';
+import CodePreview from './components/CodePreview';
 import './App.css';
 
+const theme = createTheme({
+  palette: {
+    mode: 'light',
+    primary: {
+      main: '#1976d2',
+    },
+    secondary: {
+      main: '#dc004e',
+    },
+  },
+});
+
 function App() {
+  const [generatedCode, setGeneratedCode] = useState('');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Container>
+        <Typography variant="h3" component="h1" align="center" sx={{ my: 4 }}>
+          UI Mockup to Code Generator
+        </Typography>
+        <ImageUploader onCodeGenerated={setGeneratedCode} />
+        {generatedCode && <CodePreview generatedCode={generatedCode} />}
+      </Container>
+    </ThemeProvider>
   );
 }
 

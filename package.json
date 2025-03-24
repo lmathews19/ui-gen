@@ -10,14 +10,21 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "axios": "^1.6.7",
+    "openai": "^4.28.0",
+    "@mui/material": "^5.15.11",
+    "@mui/icons-material": "^5.15.11",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"cd server && npm run dev\" \"react-scripts start\"",
     "start:dev": "nodemon --watch src --exec \"npm start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "install:all": "npm install && cd server && npm install"
   },
   "eslintConfig": {
     "extends": [
@@ -38,6 +45,7 @@
     ]
   },
   "devDependencies": {
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.9",
+    "concurrently": "^8.2.2"
   }
 }
