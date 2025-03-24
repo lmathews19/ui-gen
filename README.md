@@ -1,70 +1,140 @@
-# Getting Started with Create React App
+# UI Code Generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A powerful application that converts UI mockup images into production-ready HTML, CSS, and JavaScript code using OpenAI's GPT-4 Vision model. This tool helps developers quickly transform design mockups into functional code.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Upload UI mockup images (PNG, JPG, JPEG)
+- Customizable analysis prompts
+- Real-time code generation
+- Live preview of generated code
+- Tabbed interface for HTML, CSS, and JavaScript code
+- Responsive Material-UI design
+- Secure file handling with automatic cleanup
 
-### `npm start`
+## Architecture
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Frontend (React)
+- Built with React and Material-UI components
+- Features a clean, modern interface with:
+  - Image upload component with preview
+  - Customizable analysis prompt
+  - Code preview with syntax highlighting
+  - Live preview functionality
+  - Responsive design for all screen sizes
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Backend (Node.js/Express)
+- RESTful API server handling:
+  - File uploads using Multer
+  - Image processing and base64 conversion
+  - OpenAI API integration
+  - CORS support for local development
+  - Secure file cleanup after processing
 
-### `npm test`
+### OpenAI Integration
+- Uses GPT-4 Vision model for image analysis
+- Processes UI mockups to generate:
+  - Semantic HTML structure
+  - Styled CSS components
+  - Interactive JavaScript functionality
+- Handles both UI mockups and non-UI images with appropriate responses
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Prerequisites
 
-### `npm run build`
+- Node.js (v14 or higher)
+- npm (v6 or higher)
+- OpenAI API key
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository:
+```bash
+git clone https://github.com/lmathews19/ui-gen.git
+cd ui-gen
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install dependencies for both client and server:
+```bash
+npm run install:all
+```
 
-### `npm run eject`
+3. Create a `.env` file in the server directory:
+```bash
+cd server
+echo "OPENAI_API_KEY=your_api_key_here" > .env
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Configuration
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Ensure your OpenAI API key is valid and has access to the GPT-4 Vision model
+2. The server runs on port 3001 by default (configurable via PORT environment variable)
+3. The React development server runs on port 3000
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Running the Application
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Start the server first:
+```bash
+cd server
+npm run dev
+```
 
-## Learn More
+2. In a new terminal, start the React development server:
+```bash
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Open your browser and navigate to `http://localhost:3000`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Usage
 
-### Code Splitting
+1. Click "Choose Image" to upload a UI mockup
+2. (Optional) Edit the analysis prompt
+3. Click "Analyze" to process the image
+4. View the generated code in the tabbed interface
+5. Use the "Preview" button to see the live result
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Error Handling
 
-### Analyzing the Bundle Size
+The application provides clear error messages for:
+- Missing API key
+- Invalid file uploads
+- Server connection issues
+- OpenAI API errors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Development
 
-### Making a Progressive Web App
+- Client code is in the `src` directory
+- Server code is in the `server` directory
+- Both use hot-reloading for development
+- Concurrent execution of client and server is handled by the start script
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Security Notes
 
-### Advanced Configuration
+- API keys should never be committed to version control
+- Uploaded files are automatically deleted after processing
+- CORS is enabled for local development only
+- File uploads are restricted to image types
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## License
 
-### Deployment
+MIT License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Copyright (c) 2025 UI Code Generator
 
-### `npm run build` fails to minify
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
